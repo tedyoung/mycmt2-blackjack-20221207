@@ -14,7 +14,7 @@ public class Hand {
     public Hand() {
     }
 
-    private int value() {
+    public int value() {
         int handValue = cards
                 .stream()
                 .mapToInt(Card::rankValue)
@@ -41,10 +41,6 @@ public class Hand {
         return value() <= 16;
     }
 
-    void display() {
-        System.out.println(ConsoleHand.cardsAsString(this));
-    }
-
     public Stream<Card> cards() {
         return cards.stream();
     }
@@ -63,10 +59,6 @@ public class Hand {
 
     boolean beats(Hand hand) {
         return hand.value() < value();
-    }
-
-    String displayValue() {
-        return String.valueOf(value());
     }
 
     public boolean valueEquals(int target) {
