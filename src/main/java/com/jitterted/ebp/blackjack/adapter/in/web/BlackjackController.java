@@ -48,7 +48,7 @@ public class BlackjackController {
 
     @PostMapping("/stand")
     public String standCommand() {
-        return "redirect:/";
+        return "redirect:/done";
     }
 
 }
