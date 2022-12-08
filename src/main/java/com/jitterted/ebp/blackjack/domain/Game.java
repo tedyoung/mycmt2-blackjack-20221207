@@ -8,8 +8,8 @@ public class Game {
     private final Hand playerHand = new Hand();
     private boolean playerDone;
 
-    public Game() {
-        deck = new Deck();
+    public Game(Deck deck) {
+        this.deck = deck;
     }
 
     public void initialDeal() {
