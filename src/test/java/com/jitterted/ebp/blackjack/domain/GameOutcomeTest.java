@@ -29,4 +29,15 @@ class GameOutcomeTest {
                 .isEqualByComparingTo(GameOutcome.PLAYER_BEATS_DEALER);
     }
 
+    @Test
+    void playerDealtBlackjackUponInitialDealThenWinsBlackjack() {
+        Deck deck = new StubDeck(Rank.TEN, Rank.EIGHT,
+                                 Rank.ACE, Rank.JACK);
+        Game game = new Game(deck);
+
+        game.initialDeal();
+
+        assertThat(game.determineOutcome())
+                .isEqualByComparingTo(GameOutcome.PLAYER_WINS_BLACKJACK);
+    }
 }
