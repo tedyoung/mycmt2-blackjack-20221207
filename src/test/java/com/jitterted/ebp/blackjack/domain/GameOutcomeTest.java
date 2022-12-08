@@ -17,4 +17,16 @@ class GameOutcomeTest {
                 .isEqualTo("You Busted, so you lose.  💸");
     }
 
+    @Test
+    void playerDealtBetterHandThanDealerAndStandsThenPlayerBeatsDealer() {
+        Game game = new Game(StubDeck.playerStandsAndBeatsDealer());
+        game.initialDeal();
+
+        game.playerStands();
+        game.dealerTurn();
+
+        assertThat(game.determineOutcome())
+                .isEqualTo("You beat the Dealer! 💵");
+    }
+
 }
