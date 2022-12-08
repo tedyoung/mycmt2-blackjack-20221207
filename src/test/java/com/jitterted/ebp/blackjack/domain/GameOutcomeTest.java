@@ -8,10 +8,7 @@ class GameOutcomeTest {
 
     @Test
     void playerHitsAndGoesBustThenOutcomeIsPlayerLoses() {
-        Deck deck = new StubDeck(Rank.TEN, Rank.EIGHT,
-                                 Rank.QUEEN, Rank.JACK,
-                                 Rank.THREE);
-        Game game = new Game(deck);
+        Game game = new Game(StubDeck.playerHitsAndGoesBust());
         game.initialDeal();
 
         game.playerHits();
@@ -19,4 +16,5 @@ class GameOutcomeTest {
         assertThat(game.determineOutcome())
                 .isEqualTo("You Busted, so you lose.  💸");
     }
+
 }
