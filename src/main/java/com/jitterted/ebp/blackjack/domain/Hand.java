@@ -46,6 +46,7 @@ public class Hand {
     }
 
     public void drawFrom(Deck deck) {
+        // INVARIANT: require not busted (yet)
         cards.add(deck.draw());
     }
 
