@@ -103,8 +103,12 @@ class BlackjackControllerTest {
 
         String redirectPage = blackjackController.standCommand();
 
+        // check the Adapter did the right thing
         assertThat(redirectPage)
                 .isEqualTo("redirect:/done");
+        // check that the Adapter is wired to the Application correctly
+        assertThat(game.isPlayerDone())
+                .isTrue();
     }
 
 }
